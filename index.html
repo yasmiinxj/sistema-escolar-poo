@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Escolar</title>
+
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./tabStyle.css">
+
+  <script src="Aluno.js" defer></script>
+  <script src="Turma.js" defer></script>
+  <script src="Interface.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <h1>Sistema Escolar</h1>
+
+  <div class="tabs-container">
+    <button
+      class="tab-button active"
+      id="btn-cadastrar-turma"
+      onclick="Interface.cadastrarTurma()">
+      Cadastrar Turma
+    </button>
+
+    <button
+      class="tab-button"
+      id="btn-cadastrar"
+      onclick="Interface.cadastrar()">
+      Cadastrar Aluno
+    </button>
+
+    <button
+      class="tab-button"
+      id="btn-listar"
+      onclick="listarAluno()">
+      Listar Alunos
+    </button>
+  </div>
+
+  <div id="tab-cadastrar-turma" class="tab-content active">
+    <h2>Cadastro de Turma</h2>
+
+    <label for="curso">Curso:</label>
+    <input type="text" id="curso" placeholder="Nome do curso">
+
+    <label for="prof">Professor:</label>
+    <input type="text" id="prof" placeholder="Nome do professor">
+
+    <button class="btn-salvar" onclick="btnSalvarTurma()">
+      Salvar Turma
+    </button>
+  </div>
+
+  <div id="tab-cadastrar" class="tab-content">
+    <h2>Cadastro de Aluno</h2>
+
+    <label for="turma">Turma:</label>
+    <select id="turma">
+      <option value="">Cadastre uma turma primeiro</option>
+    </select>
+
+    <label for="nome">Nome do aluno:</label>
+    <input type="text" id="nome" placeholder="Nome do aluno">
+
+    <label for="n1">Nota 1:</label>
+    <input type="number" id="n1" min="0" max="10" step="0.1">
+
+    <label for="n2">Nota 2:</label>
+    <input type="number" id="n2" min="0" max="10" step="0.1">
+
+    <label for="n3">Nota 3:</label>
+    <input type="number" id="n3" min="0" max="10" step="0.1">
+
+    <button class="btn-salvar" onclick="btnSalvarAluno()">
+      Salvar Aluno
+    </button>
+  </div>
+
+  <div id="tab-listar" class="tab-content">
+    <h2>Alunos Cadastrados</h2>
+
+    <div id="alunos">
+      <p>Nenhum aluno cadastrado ainda.</p>
+    </div>
+  </div>
+</body>
+</html>
